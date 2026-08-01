@@ -4,7 +4,7 @@
 header("Content-Type: application/json; charset=utf-8");
 
 //Verifica se a requisição é do tipo POST
-    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405); //405 - método não permitido
 
     echo json_encode([
@@ -17,12 +17,12 @@ header("Content-Type: application/json; charset=utf-8");
 
 // Recebe os dados enviados pelo formulário
 $nome = trim($_POST['nome']);
-$categoria = trim($_POST['categoria']);
-$preco = trim($_POST['preco']);
-$quantidade = trim($_POST['quantidade']);
+$cpf = trim($_POST['cpf']);
+$email = trim($_POST['email']);
+$telefone = trim($_POST['telefone']);
 
 // Valida os campos obrigatórios 
-if ($nome === "" || $categoria === "" || $preco === "" || $quantidade === "") {
+if ($nome === "" || $cpf === "" || $email === "" || $telefone === "") {
     http_response_code(400);
 
     echo json_encode([
@@ -35,16 +35,16 @@ if ($nome === "" || $categoria === "" || $preco === "" || $quantidade === "") {
 
 // -------->>> TODO: Aqui seria o banco de dados 
 
-//Retornar sucesso 
+//Simulando  retornar  sucesso 
 http_response_code(200);
 
-echo json_encode ([
+echo json_encode([
     "sucesso" => true,
-    "mensagem" => "Produto cadastrado com sucesso!",
-    "produto" => [
+    "mensagem" => "Cliente cadastrado com sucesso!",
+    "cliente" => [
         "nome" => $nome,
-        "categoria" => $categoria,
-        "preco" => $preco,
-        "quantidade" => $quantidade,
+        "cpf" => $cpf,
+        "email" => $email,
+        "telefone" => $telefone,
     ]
 ]);

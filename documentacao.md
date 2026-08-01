@@ -1,14 +1,26 @@
 # Roteiro de execução do projeto
  1- Criar as pastas
  2- Criar arquivo documentacao.md
- 3- Criar arquivo index.php 
+ 3- Criar arquivo index.php
+   -> para chamar rotas 
  4- Criar arquivo routes.php
- 5- Gerar o html para utilizar as rotas (3)
- 6- Gerar o php das rotas (4)
- 7- Criar a view do código 404
- 8- Criar a view de produtos
- 9- Criar o script de produtos 
- 10-Criar o controller de produto
+   -> Gerar o php das rotas válidas
+ 5- Criar a view do código 404
+ 6- Criar a view de produtos/clientes/funcionarios
+ 7- Criar o script de produtos/clientes/funcionarios
+ 8- Criar o controller de produto/cliente/funcionarios
+ 9- Criar o css de de produtos/clientes/funcionarios
+
+
+ Exercício: Usando o roteiro abaixo crie um sistema capaz de armazenar informações de 
+	- Médico (Nome, cpf, crm, email, telefone)
+        - Cliente (Nome, cpf, email, telefone)
+	- Agenda (crmMedico, cpfCliente, data, horário)
+
+
+
+_________________________________ - até aqui validadado ___________________________
+
  
  
 https://github.com/turma0149/ 
