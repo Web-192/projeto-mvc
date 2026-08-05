@@ -10,10 +10,10 @@
 
                  <!-- Nome -->
                  <div class="mb-3">
-
-                     <label for="nome"> Nome </label>
-
-                     <div class="input-group">
+                     
+                    <label for="nome"> Nome </label>
+                    
+                    <div class="input-group">
                          <span class="input-group-text"> <i class="bi bi-box"></i> </span>
                          <input type="text" id="nome" name="nome" class="form-control">
                          <div class="invalid-feedback"></div>
@@ -40,7 +40,7 @@
 
                      <div class="input-group">
                          <span class="input-group-text">R$</span>
-                         <input type="text" id="preco" name="preco" class="form-control">
+                         <input type="text" id="preco" name="preco" class="form-control">                         
                      </div>
 
                      <div class="invalid-feedback"></div>

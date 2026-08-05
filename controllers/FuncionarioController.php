@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
     echo json_encode([
         "sucesso" => false,
-        "mensagem" => "Método não permitido, esperava GET"
+        "mensagem" => "Método não permitido, esperava POST"
     ]);
 
     exit;
@@ -40,11 +40,11 @@ http_response_code(200);
 
 echo json_encode([
     "sucesso" => true,
-    "mensagem" => "Funcionário cadastrado com sucesso!",
+    "mensagem" => "Funcionario cadastrado com sucesso!",
     "funcionario" => [
         "nome" => $nome,
         "regFunc" => $regFunc,
         "pis" => $pis,
-        "quantidade" => $cnpj,
+        "cnpj" => $cnpj
     ]
 ]);

@@ -1,12 +1,13 @@
 <?php
 //definir url do  projeto
-//http://localhost/Cau%C3%A3/mvc/a_projeto_mvc_funcoes/index.php?page=medico
+//http://localhost/projetos-michelle/mvc/a_projeto_mvc_funcoes/index.php?page=produtos
 
 //definir páginas válidas no projeto
 $paginasValidas = [
     "produtos" => __DIR__ . "/views/produto.php",
     "clientes" => __DIR__ . "/views/cliente.php",
     "funcionarios" => __DIR__ . "/views/funcionario.php",
+    "medicos" => __DIR__ . "/views/medico.php",
 ];
 
 // Capturar a página informada na url 
