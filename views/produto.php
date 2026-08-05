@@ -2,7 +2,7 @@
      <link rel="stylesheet" href="assets/css/produto.css">
 
      <section>
-         <div class="col-md-6 mx-auto">
+         <div class="col-md-6 mx-auto mt-5">
              <h2> Cadastro de produtos </h2>
 
              <!-- Formulário -->
@@ -13,8 +13,7 @@
 
                      <label for="nome"> Nome </label>
 
-                     <!-- TODO: Coloquei todos input-group -->
-                     <div class="input-group"> 
+                     <div class="input-group">
                          <span class="input-group-text"> <i class="bi bi-box"></i> </span>
                          <input type="text" id="nome" name="nome" class="form-control">
                          <div class="invalid-feedback"></div>
@@ -31,7 +30,7 @@
                          <span class="input-group-text"> <i class="bi bi-tags"></i> </span>
                          <input type="text" id="categoria" name="categoria" class="form-control">
                          <div class="invalid-feedback"></div>
-                     <div class="valid-feedback"></div>
+                         <div class="valid-feedback"></div>
                      </div>
                  </div>
 
@@ -42,7 +41,6 @@
                      <div class="input-group">
                          <span class="input-group-text">R$</span>
                          <input type="text" id="preco" name="preco" class="form-control">
-                         <!-- TODO: type text -->
                      </div>
 
                      <div class="invalid-feedback"></div>
