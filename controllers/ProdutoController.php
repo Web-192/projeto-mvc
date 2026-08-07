@@ -64,5 +64,5 @@ function validarCadastro($validator)
     $validator->required("nome", "Informe o nome.");
     $validator->string("nome", "O nome deve ser um texto.");
     $validator->minLength("nome", 3, "O nome deve ter pelo menos 3 caracteres.");
-    $validator->maxLength("nome", 30, "O nome deve ter no máximo 30 caracteres.");
+    $validator->maxLength("nome", 100, "O nome deve ter no máximo 30 caracteres.");
 }
