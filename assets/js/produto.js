@@ -71,10 +71,7 @@ function validarFormulario() {
 
     // Mensagens de erro
     errorPlacement: function (error, element) {
-      element
-        .closest(".input-group")
-        .find(".invalid-feedback")
-        .text(error.text());
+      element.closest(".mb-3").find(".invalid-feedback").text(error.text());
     },
 
     // Executado quando o campo está inválido
@@ -102,11 +99,11 @@ function validarFormulario() {
         .replace(/\./g, "")
         .replace(",", ".");
 
-      //Mostra os dados no console
-      //console.table(Object.fromEntries(dados.entries()));
-
       // Substitui o preço mascarado pelo preço convertido
       dados.set("preco", precoConvertido);
+
+      //Mostra os dados no console
+      console.table(Object.fromEntries(dados.entries()));
 
       // Exibe mensagem enquanto envia
       mensagem.className = "alert alert-info mt-3";
@@ -126,10 +123,19 @@ function validarFormulario() {
 
         // Verifica se ocorreu erro HTTP
         if (!resposta.ok) {
-          //TODO: alterar para sucesso
           mensagem.className = "alert alert-danger mt-3";
-          mensagem.textContent =
-            resultado.mensagem ?? "Erro ao cadastrar produto.";
+          let conteudo = `<strong>${resultado.mensagem}</strong>`;
+          if (resultado.erros) {
+            conteudo += "<ul class='mb-0 mt-2'>";
+            Object.entries(resultado.erros).forEach(function ([campo, erros]) {
+              erros.forEach(function (erro) {
+                conteudo += `<li>${erro}</li>`;
+              });
+            });
+            conteudo += "</ul>";
+          }
+
+          mensagem.innerHTML = conteudo;
 
           return;
         }
@@ -141,8 +147,6 @@ function validarFormulario() {
         // Limpa os campos
         formulario.reset();
 
-        // Remove as classes da validação
-        $(formulario).find(".form-control").removeClass("is-valid is-invalid");
       } catch (erro) {
         mensagem.className = "alert alert-danger mt-3";
         mensagem.textContent =

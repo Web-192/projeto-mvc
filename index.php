@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sistema de Cadastros</title>
 
@@ -19,6 +17,25 @@
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
+    <?php
+    // Captura a página atual informada na URL
+    $page = $_GET["page"] ?? "landing";
+
+    // Páginas que possuem HTML próprio
+    $paginasIndependentes = [
+        "landing" => __DIR__ . "/views/landing.php",
+        "login" => __DIR__ . "/views/login.php",
+    ];
+
+
+    // Verifica se é uma página independente
+    if (array_key_exists($page, $paginasIndependentes)) {
+        require $paginasIndependentes[$page];
+        exit;
+    }
+
+    ?>
+
     <!-- Cabeçalho -->
     <header class="bg-dark text-white py-3">
         <div class="container">
@@ -26,28 +43,32 @@
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
 
                 <h1 class="h3 mb-3 mb-md-0">
-                    Sistema de Cadastros
+                    <a href="index.php?page=home" class="text-white text-decoration-none">
+                        Sistema de Cadastros
+                    </a>
                 </h1>
 
                 <!-- Menu principal -->
                 <nav class="nav">
 
-                    <a
-                        href="index.php?page=produtos"
-                        class="nav-link text-white">
+                    <a href="index.php?page=produtos"
+                        class="nav-link <?= $page === 'produtos' ? 'text-white fw-bold' : 'text-white-50' ?>">
                         Produtos
                     </a>
 
-                    <a
-                        href="index.php?page=clientes"
-                        class="nav-link text-white">
+                    <a href="index.php?page=clientes"
+                        class="nav-link <?= $page === 'clientes' ? 'text-white fw-bold' : 'text-white-50' ?>">
                         Clientes
                     </a>
 
-                    <a
-                        href="index.php?page=funcionarios"
-                        class="nav-link text-white">
+                    <a href="index.php?page=funcionarios"
+                        class="nav-link <?= $page === 'funcionarios' ? 'text-white fw-bold' : 'text-white-50' ?>">
                         Funcionários
+                    </a>
+
+                     <a href="index.php?page=landing"
+                        class="nav-link <?= $page === 'landing' ? 'text-white fw-bold' : 'text-white-50' ?>">
+                        Sair
                     </a>
 
                 </nav>
@@ -68,7 +89,7 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-3 mt-5">
 
         <p class="mb-0">
             Sistema MVC de Cadastros
